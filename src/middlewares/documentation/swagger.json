@@ -49,6 +49,46 @@
                     }
                 }
             }
+        },"/test": {
+            "get": {
+                "description": "Returns 'Ceci est un test' to the caller",
+                "tags": [
+                    "test"
+                ],
+                "operationId": "test",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TestResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },"/test2": {
+            "get": {
+                "description": "Returns '7' to the caller",
+                "tags": [
+                    "test"
+                ],
+                "operationId": "test2",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Test2Response"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -65,6 +105,31 @@
                     }
                 }
             }
+        ,
+            "TestResponse": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "message"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            }
+        ,"Test2Response": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "result"
+            ],
+            "properties": {
+                "message": {
+                    "type": "number"
+                }
+            }
         }
+    }
     }
 }
