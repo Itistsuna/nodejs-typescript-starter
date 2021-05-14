@@ -7,7 +7,7 @@ export class GetCategories {
         this.categoryRepo = categoryRepo
     }
 
-    public async getCategories(){
+    public async execute(){
         return await this.categoryRepo.getCategories()
     }
 }

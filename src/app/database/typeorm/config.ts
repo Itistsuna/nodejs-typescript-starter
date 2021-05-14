@@ -7,7 +7,7 @@ const databaseCredentials = {
         host: DB_HOST,
         username: DB_USERNAME,
         password: DB_PASSWORD,
-        logging: false,
+        logging: !__prod__,
         synchronize: true,
         entities: [] as any[]
     },

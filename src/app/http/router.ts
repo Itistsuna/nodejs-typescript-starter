@@ -1,4 +1,6 @@
 import { Router, Request, Response } from 'express'
+import { skillRouter } from '../../modules/skill/skillRouter'
+import { categoryRouter } from '../../modules/category/categoryRouter'
 
 const v1Router: Router = Router()
 
@@ -6,14 +8,7 @@ v1Router.get('/', (_: Request, response: Response) => {
     response.json({ message: 'Hello world !' });
 });
 
-v1Router.get('/test', (_: Request, response: Response) => {
-    response.json({message: 'Ceci est un test'})
-})
-
-v1Router.get("/test2", (_: Request, response: Response)=>{
-    const a = 3
-    const b = 4
-    response.json({result: a+b})
-})
+v1Router.use('/skills', skillRouter)
+v1Router.use('/categories', categoryRouter)
 
 export { v1Router }

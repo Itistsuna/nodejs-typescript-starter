@@ -8,25 +8,11 @@ export class GetCategoriesController {
         this.useCase = getCategories
     }
 
-    public async execute(req: Request, res: Response){
-        const {name, description} = req.body
-        if(!name){
-            return res.status(400).json({
-                error: {
-                    message: "Name is required"
-                }
-            })
-        }
+    public async execute(_: Request, res: Response){
 
-        if(!description){
-            return res.status(400).json({
-                error: {
-                    message: "Description is required"
-                }
-            })
-        }
-
-        const categories = await this.useCase.execute({name,description})
+        const categories = await this.useCase.execute()
+        console.log("categories :" + categories);
+        
         res.status(200).json(categories)
     }
 }
