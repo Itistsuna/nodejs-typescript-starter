@@ -1,10 +1,10 @@
 import { entitiesObject } from '../../../../app/database/typeorm/entities/index'
 import { SkillRepo } from '../../skillRepo'
 import { CreateSkill } from './createSkill'
-import { CreateSkillControler } from './createSkillControler'
+import { CreateSkillController } from './createSkillControler'
 
 const skillRepo = new SkillRepo(entitiesObject)
 const createSkill = new CreateSkill(skillRepo)
-const createSkillControler = new CreateSkillControler(createSkill)
+const createSkillController = new CreateSkillController(createSkill)
 
-export { createSkill, createSkillControler }
+export { createSkill, createSkillController }

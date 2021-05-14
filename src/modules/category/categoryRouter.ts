@@ -12,6 +12,6 @@ categoryRouter.post('/', (req, res) => createCategoryController.execute(req, res
 categoryRouter.get('/', (_: Request,res: Response) => getCategoriesController.execute(_,res))
 categoryRouter.get(`/:id`,(req: Request, res: Response) => getCategoryByIdController.execute(req,res) )
 categoryRouter.put('/update/:id',(req:Request, res:Response) => editCategoryController.execute(req,res))
-categoryRouter.get('/delete/:id',(req:Request,res:Response) => deleteCategoryController.execute(req,res))
+categoryRouter.delete('/delete/:id',(req:Request,res:Response) => deleteCategoryController.execute(req,res))
 
 export { categoryRouter }
