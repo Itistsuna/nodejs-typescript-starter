@@ -14,4 +14,4 @@ progressRouter.get(`/:id`,(req: Request, res: Response) => getProgressByIdContro
 progressRouter.put('/update/:id',(req:Request, res:Response) => editProgressController.execute(req,res))
 progressRouter.delete('/delete/:id',(req:Request,res:Response) => deleteProgressController.execute(req,res))
 
-export { progressRouter }
+export { progressRouter } 

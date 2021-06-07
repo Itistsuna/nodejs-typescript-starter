@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express'
 import { skillRouter } from '../../modules/skill/skillRouter'
 import { categoryRouter } from '../../modules/category/categoryRouter'
-import { progressRouter } from 'src/modules/category copy/progressRouter';
+import { progressRouter } from '../../modules/progress/progressRouter';
 
 const v1Router: Router = Router()
 

@@ -1,11 +1,11 @@
 import { Request, Response } from 'express'
-import { DeleteCategory } from './deleteCategory'
+import { DeleteProgress } from './deleteProgress'
 
-export class DeleteCategoryController{
-    private useCase: DeleteCategory
+export class DeleteProgressController{
+    private useCase: DeleteProgress
 
-    constructor(deleteCategory: DeleteCategory){
-        this.useCase = deleteCategory
+    constructor(deleteProgress: DeleteProgress){
+        this.useCase = deleteProgress
     }
 
     public async execute(req: Request, res: Response){
@@ -14,6 +14,5 @@ export class DeleteCategoryController{
         res.status(200).json({
             "message": "Deleted"
         })
-
     }
 }

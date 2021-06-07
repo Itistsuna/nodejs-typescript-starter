@@ -1,6 +1,6 @@
 //UseCase -> Service -> de la logique
 import { ProgressRepo } from "../../progressRepo";
-import { progressType } from '../../progressType'
+import { progressTypes } from '../../progressTypes'
 
 export class CreateProgress {
     private progressRepo: ProgressRepo;
@@ -9,7 +9,7 @@ export class CreateProgress {
         this.progressRepo = progressRepo
     }
 
-    public async execute(props: progressType) {
+    public async execute(props: progressTypes) {
         return await this.progressRepo.create(props);
     }
 }
