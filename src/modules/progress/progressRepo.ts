@@ -7,10 +7,10 @@ export class ProgressRepo {
         //Category //User //Skill
         this.entities = entities
     }
-
+    
     public async create(progressType: progressTypes) {
         const ProgressEntity = this.entities.Progress
-        return await ProgressEntity.create({name: progressType.name, level: progressType.level}).save()
+        return await ProgressEntity.create({user: progressType.user, level: progressType.level, skill: progressType.skill}).save()
     }
 
     public async getProgress() {
@@ -26,8 +26,9 @@ export class ProgressRepo {
     public async editProgress(progressProps: any ){
         const ProgressEntity = this.entities.Progress
         let updatedProgress = await ProgressEntity.findOne({id: progressProps.id.id})
-        updatedProgress.name = progressProps.name
-        updatedProgress.description = progressProps.description
+        updatedProgress.skill = progressProps.skill
+        updatedProgress.level = progressProps.level
+        updatedProgress.user = progressProps.user
         return await ProgressEntity.save(updatedProgress)
     }
 

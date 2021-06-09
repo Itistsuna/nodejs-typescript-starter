@@ -1,17 +1,23 @@
-import {Entity, PrimaryGeneratedColumn, Column, OneToMany} from 'typeorm'
-import { Progress } from './progress';
+import {Entity, PrimaryGeneratedColumn, Column, OneToOne, BaseEntity} from 'typeorm'
+import { Student } from './student';
 
 @Entity()
-export class User {
+export class User extends BaseEntity {
     @PrimaryGeneratedColumn()
-    id: number;
+    id: Number;
 
     @Column()
-    firstname: string;
+    email: String;
 
     @Column()
-    lastname: string;
+    password: String;
 
-    @OneToMany(_type => Progress, progress => progress.id)
-    progress: Progress[]
+    @Column()
+    isAdmin: Boolean;
+
+    @Column()
+    lastLoggin: Date;
+
+    @OneToOne(_type => Student, student => student.id)
+    student: Student[]
 }

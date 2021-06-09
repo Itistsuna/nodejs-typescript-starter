@@ -1,4 +1,5 @@
 export type progressTypes = {
-    name : string,
-    level: number
+    skill : number,
+    level: number,
+    user: number
 }

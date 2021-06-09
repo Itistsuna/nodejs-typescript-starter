@@ -10,9 +10,9 @@ export class CreateProgressController {
     }
 
     public async execute(req: Request, res: Response) {        
-        const { name, level } = req.body
+        const { skill,user, level } = req.body
         //Si le body est pas valide, on renvoie une 400
-        if (!name) {
+        if (!skill) {
             return res.status(400).json({
                 error: {
                     message: 'Name is required'
@@ -28,7 +28,7 @@ export class CreateProgressController {
             });
         }
 
-        const categories = await this.useCase.execute({ name, level });
+        const categories = await this.useCase.execute({ skill,user , level });
         console.log('Controller categories result', categories);
 
         res.status(200).json(categories);

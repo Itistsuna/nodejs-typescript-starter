@@ -1,10 +1,10 @@
-import {Entity, PrimaryGeneratedColumn, Column, ManyToOne} from 'typeorm'
+import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, BaseEntity} from 'typeorm'
 import { Level } from './level';
 import { Skill } from './skill';
 import { User } from './user';
 
 @Entity()
-export class Progress {
+export class Progress extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
 

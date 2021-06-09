@@ -2,7 +2,7 @@ import { Router, Request, Response } from 'express'
 import { skillRouter } from '../../modules/skill/skillRouter'
 import { categoryRouter } from '../../modules/category/categoryRouter'
 import { progressRouter } from '../../modules/progress/progressRouter';
-
+import { userRouter} from '../../modules/user/userRouter'
 const v1Router: Router = Router()
 
 v1Router.get('/', (_: Request, response: Response) => {
@@ -12,5 +12,7 @@ v1Router.get('/', (_: Request, response: Response) => {
 v1Router.use('/skills', skillRouter)
 v1Router.use('/categories', categoryRouter)
 v1Router.use('/progress', progressRouter)
+v1Router.use('/user', userRouter)
+
 
 export { v1Router }
